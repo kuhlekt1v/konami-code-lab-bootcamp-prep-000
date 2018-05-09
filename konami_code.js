@@ -10,31 +10,19 @@ const codes = [
   "b",
   "a"
 ];
-//setup variable called index = 0
- 
 
 function init() {
- let index = 0;
+  let idex = 0
 
- //listen for keydown events
-  document.body.addEventListener('keydown', function(e) {
+  document.body.addEventListener("keydown", (e) => {
+    const key = e.key
     
-  //if the key is correct, increment 'index' variable
-  const key = e.key;
-  console.log (key);
-  console.log (codes[index])
-  if (key === codes[index]) {
-    index++;
-    console.log(index)
+    idex = (codes[idex] === key) ? ++idex : 0
     
-  // use the index variable to compare a spot in the codes array  
-    
-  } else {
-    index = 0;
-  }
-  if (index === codes.length) {
-      index = 0;
-      alert("Hooray!");
+    if (idex === codes.length) {
+      window.alert("Hurray!");
+      idex = 0
     }
-});
+    
+  });
 }
